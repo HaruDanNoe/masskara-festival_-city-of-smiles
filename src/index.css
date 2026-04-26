@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-festive-magenta: #FF00FF;
+  --color-festive-cyan: #00FFFF;
+  --color-festive-yellow: #FFFF00;
+  --color-festive-black: #050505;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-festive-black)] text-white font-sans antialiased;
+  }
+}
+
+.neon-glow-magenta {
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.neon-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.neon-glow-yellow {
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5);
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.mask-gradient {
+  background: linear-gradient(135deg, var(--color-festive-magenta), var(--color-festive-cyan), var(--color-festive-yellow));
+}
