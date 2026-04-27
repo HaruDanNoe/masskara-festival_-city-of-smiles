@@ -304,7 +304,7 @@ export default function App() {
              loop
             playsInline
     >
-      <source src="/img/MaskarraHome.mp4" type="video/mp4" />
+      <source src="/img/mashome.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
                <div className="absolute inset-0 flex items-center justify-center p-12 text-center">
@@ -373,7 +373,7 @@ export default function App() {
           loop
           playsInline
         >
-          <source src="/img/Mas2.mp4" type="video/mp4" />
+          <source src="/img/mas2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -439,7 +439,7 @@ export default function App() {
       <GalleryVideo
         title="Local Delicacies Page"
         subtitle="Vibrant, dark-themed UI showcasing local delicacies with clean typography and glowing borders."
-        video="/img/LD.mp4"
+        video="/img/ld.mp4"
       />
 
     </div>
