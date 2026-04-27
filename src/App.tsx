@@ -111,9 +111,13 @@ export default function App() {
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-8 h-8 mask-gradient rounded-lg flex items-center justify-center p-1.5 rotate-12 transition-transform group-hover:rotate-0">
-              <Smile className="text-black w-full h-full" />
-            </div>
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center rotate-12 transition-transform group-hover:rotate-0">
+          <img 
+             src="/img/masskara_menu.png" 
+            alt="Menu Logo"
+            className="w-full h-full object-cover"
+  />
+</div>
             <span className="font-display font-bold uppercase tracking-tighter text-lg hidden sm:block">
               Mass<span className="text-festive-cyan">Kara</span>
             </span>
@@ -217,7 +221,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] flex items-center justify-center gap-3 text-white/80">
+            <span className="font-mono text-xs md:text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 text-white/80">
               <span className="text-festive-yellow">KASANAG</span> Presents
             </span>
           </motion.div>
