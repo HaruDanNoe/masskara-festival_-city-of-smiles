@@ -88,7 +88,7 @@ export default function App() {
     { name: 'Intro', href: '#intro' },
     { name: 'Challenge', href: '#problem' },
     { name: 'Stack', href: '#tech' },
-    { name: 'Solution', href: '#solution' },
+    { name: 'Vision', href: '#vision' },
     { name: 'Gallery', href: '#gallery' },
   ];
 
@@ -360,8 +360,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Solution */}
-        <section id="solution" className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Vision */}
+        <section id="vision" className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
            <div className="order-2 lg:order-1 relative group">
             <div className="absolute inset-0 bg-festive-yellow/10 rounded-3xl blur-2xl group-hover:bg-festive-yellow/20 transition-colors duration-700" />
             <div className="relative glass-card rounded-3xl overflow-hidden p-8 space-y-6">
