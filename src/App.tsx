@@ -386,7 +386,7 @@ export default function App() {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <SectionHeading subtitle="04 / Creative Outcome" colorClass="text-festive-yellow neon-glow-yellow">The Solution</SectionHeading>
+            <SectionHeading subtitle="04 / Creative Outcome" colorClass="text-festive-yellow neon-glow-yellow">The Vision</SectionHeading>
             <div className="space-y-6 text-lg text-white/70">
               <p>
                 We designed a festive-themed interface that uses bold colors, vibrant visuals, and engaging layouts inspired by the MassKara Festival.
