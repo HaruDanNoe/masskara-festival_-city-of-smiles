@@ -75,6 +75,33 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleMusic = () => {
+  if (!audioRef.current) return;
+
+  if (isPlaying) {
+    audioRef.current.pause();
+  } else {
+    audioRef.current.play();
+  }
+
+  setIsPlaying(!isPlaying);
+};
+
+useEffect(() => {
+  const handleUserInteraction = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = false;
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+    window.removeEventListener('click', handleUserInteraction);
+  };
+
+  window.addEventListener('click', handleUserInteraction);
+}, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,6 +130,11 @@ export default function App() {
   return (
     <div ref={containerRef} className="relative min-h-screen bg-[var(--color-festive-black)] overflow-x-hidden selection:bg-festive-magenta selection:text-black">
       {/* Navbar */}
+
+      <audio ref={audioRef} loop muted>
+      <source src="/img/mask.mp3" type="audio/mpeg" />
+    </audio>
+
       <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 px-6 py-4 ${isScrolled ? 'bg-black/60 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <motion.div 
@@ -111,12 +143,19 @@ export default function App() {
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
+
             <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center rotate-12 transition-transform group-hover:rotate-0">
           <img 
              src="/img/masskara_menu.png" 
             alt="Menu Logo"
             className="w-full h-full object-cover"
   />
+  <motion.button
+  onClick={toggleMusic}
+  className="text-white/70 hover:text-festive-yellow text-xs font-mono uppercase"
+>
+  {isPlaying ? 'Music Off' : 'Music On'}
+</motion.button>
 </div>
             <span className="font-display font-bold uppercase tracking-tighter text-lg hidden sm:block">
               Mass<span className="text-festive-cyan">Kara</span>
@@ -304,7 +343,7 @@ export default function App() {
              loop
             playsInline
     >
-      <source src="/img/mashome.mp4" type="video/mp4" />
+      <source src="/img/mainvid.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
                <div className="absolute inset-0 flex items-center justify-center p-12 text-center">
@@ -583,6 +622,8 @@ function GalleryVideo({
   video: string;
 }) {
   return (
+
+    
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
