@@ -150,12 +150,7 @@ useEffect(() => {
             alt="Menu Logo"
             className="w-full h-full object-cover"
   />
-  <motion.button
-  onClick={toggleMusic}
-  className="text-white/70 hover:text-festive-yellow text-xs font-mono uppercase"
->
-  {isPlaying ? 'Music Off' : 'Music On'}
-</motion.button>
+  
 </div>
             <span className="font-display font-bold uppercase tracking-tighter text-lg hidden sm:block">
               Mass<span className="text-festive-cyan">Kara</span>
@@ -178,6 +173,7 @@ useEffect(() => {
               </motion.button>
             ))}
             
+            
             <motion.a
   href="https://portfolio-gamma-ten-4pevx4sjtn.vercel.app/"
   target="_blank"
@@ -189,6 +185,13 @@ useEffect(() => {
 >
   Back to Portfolio
 </motion.a>
+
+ <motion.button
+  onClick={toggleMusic}
+  className="text-white/70 hover:text-festive-yellow text-xs font-mono uppercase"
+>
+  {isPlaying ? 'Music Off' : 'Music On'}
+</motion.button>
           </div>
 
           <motion.div className="flex items-center gap-4">
